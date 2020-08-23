@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="Capstone.Capstone.main~1" target="14" />
-      <module name="Capstone.Capstone.test~1" target="14" />
+      <module name="Capstone.Capstone.main" target="14" />
+      <module name="Capstone.Capstone.test" target="14" />
     </bytecodeTargetLevel>
   </component>
 </project>
