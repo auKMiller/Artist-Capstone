@@ -3,24 +3,24 @@
 <head>
     <style>
     h1 {
-    color: goldenRod;
+    color: chocolate;
     text-align: center;
     font-size: 50px;
     padding: 50px;
     margin-top: 0;
     }
-    ul {
-    list-style-type: none;
-    margin: 50px;
-    padding: 0;
-    }
-    li a {
-    color: midnightBlue;
-    font-size: 20px;
-    font-family: verdana;
-    display: block;
-    width: 60px;
-    }
+<!--    ul {-->
+<!--    list-style-type: none;-->
+<!--    margin: 50px;-->
+<!--    padding: 0;-->
+<!--    }-->
+<!--    li a {-->
+<!--    color: midnightBlue;-->
+<!--    font-size: 20px;-->
+<!--    font-family: verdana;-->
+<!--    display: block;-->
+<!--    width: 60px;-->
+<!--    }-->
     p {
     text-indent: 50px;
     txt-align: justify;
@@ -32,31 +32,29 @@
     margin-left: 300px;
     margin-right: 300px;
     }
-    img {
-    margin-top: 0;
-    position: absolute;
-    width: 15%;
-    height: auto;
-    }
+<!--    img {-->
+<!--    margin-top: 0;-->
+<!--    position: absolute;-->
+<!--    width: 15%;-->
+<!--    height: auto;-->
+<!--    }-->
     </style>
     <meta charset="UTF-8"/>
     <title>Artist Page</title>
-    <img src="lolo_logo.jpeg">
-    <h1>Lauren Crangle</h1>
 
-    <ul>
-        <li><a href="@{/Gallery/index}">Gallery</a></li>
-        <li><a href="@{/Gallery/about}">About</a></li>
-    </ul>
+
+<div th:replace="fragments :: nav-bar"></div>
+
 
 
 </head>
 <body>
+<div style="margin-left:20%;padding:1px 16px;height:1000px;">
+    <h1>Lauren Crangle</h1>
+    <p>This is the artist statement. Where you write about your passion and inspiration for the work that you produce.
+        Why you do the work and journey you took to complete it. This is a little window to inside your head. Your thoughts,
+        your dreams, your vision. Anyone can have an idea but it's you as the artist that brings it to life.</p>
 
-<p>This is the artist statement. Where you write about your passion and inspiration for the work that you produce.
-    Why you do the work and journey you took to complete it. This is a little window to inside your head. Your thoughts,
-    your dreams, your vision. Anyone can have an idea but it's you as the artist that brings it to life.</p>
-
-
+</div>
 </body>
 </html>
