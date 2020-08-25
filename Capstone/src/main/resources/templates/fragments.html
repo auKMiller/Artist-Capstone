@@ -2,18 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org/">
 
 <head th:fragment="head">
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/css/capstone.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
 
 
     <div th:fragment="nav-bar" class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
-                <a th:href="@{/}" class="navbar-brand"><img src="lolo_logo.jpeg"></a>
+                <a th:href="@{/}" class="navbar-brand"><img src="lolo_logo3.jpg"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <style>
     img {
     margin: 25px;
-    position: absolute;
+    position: fixed;
     width: 15%;
     height: auto;
     }
@@ -22,19 +25,19 @@
     margin-top: 175px;
     margin-left: 25px;
     padding: 0;
-    width: 20%;
+    width: 15%;
     background-color: white;
     position: fixed;
     height: 50%;
     overflow: auto;
     }
     li a {
-    padding: 15px 15px;
+    padding: 15px 20px;
     color: midnightBlue;
     font-size: 20px;
     font-family: verdana;
     display: block;
-    width: 60px;
+    width: 80px;
     text-decoration: none;
     }
     li a.active {
@@ -43,17 +46,18 @@
     text-decoration: none;
     }
     li a:hover:not(.active){
-    background-color: chocolate;
+    background-color: lightSteelBlue;
     color: midnightBlue;
     text-decoration: none;
     }
+
 </style>
 
 
 
                 <ul class="nav navbar-nav">
-                    <li><a href="@{/gallery}">Gallery</a></li>
-                    <li><a href="#index">About</a></li>
+                    <li><a href="gallery">Gallery</a></li>
+                    <li><a href="index">About</a></li>
                 </ul>
             </div>
         </div>

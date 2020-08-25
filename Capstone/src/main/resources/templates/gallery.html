@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <div th:replace="fragments :: nav-bar"></div>
+
+</head>
+<body>
+<div style="margin-left:20%;padding:1px 16px;height:1000px;">
+<!--    <style>-->
+<!--        * {-->
+<!--        box-sizing: border-box;-->
+<!--        }-->
+<!--        .row{-->
+<!--        display: -ms-flexbox;-->
+<!--        display: flex;-->
+<!--        -ms-flex-wrap: wrap;-->
+<!--        padding: 0 4px;-->
+<!--        }-->
+<!--        .column {-->
+<!--        -ms-flex: 25%;-->
+<!--        flex: 25%;-->
+<!--        max-width: 25%;-->
+<!--        padding: 0 4px;-->
+<!--        }-->
+<!--        .column img{-->
+<!--        margin-top: 8px;-->
+<!--        vertical-align: middle;-->
+<!--        width: 100%;-->
+<!--        }-->
+<!--        @media screen and (max-width: 800px) {-->
+<!--            .column {-->
+<!--            -ms-flex: 50%;-->
+<!--            flex: 50%;-->
+<!--            max-width: 50;-->
+<!--            }-->
+<!--        }-->
+<!--        @media screen and (max-width: 600px){-->
+<!--            .column {-->
+<!--            -ms-flex: 100%;-->
+<!--            flex: 100%;-->
+<!--            max-width: 100%;-->
+<!--            }-->
+<!--        }-->
+<!--    </style>-->
+<!--    <div class="row">-->
+<!--        <div class="column">-->
+<!--            <img src="hotel1.jpg" style="width:100%">-->
+<!--            <img src="trees.jpg" style="width:100%">-->
+<!--            <img src="burst.jpg" style="width:100%">-->
+<!--        </div>-->
+<!--        <div class="column">-->
+<!--            <img src="hotel1.jpg" style="width:100%">-->
+<!--            <img src="hotel1.jpg" style="width:100%">-->
+<!--            <img src="hotel1.jpg" style="width:100%">-->
+<!--        </div>-->
+<!--        <div class="column">-->
+<!--            <img src="hotel1.jpg" style="width:100%">-->
+<!--            <img src="hotel1.jpg" style="width:100%">-->
+<!--            <img src="hotel1.jpg" style="width:100%">-->
+<!--        </div>-->
+<!--        <div class="column">-->
+<!--            <img src="hotel1.jpg" style="width:100%">-->
+<!--            <img src="hotel1.jpg" style="width:100%">-->
+<!--            <img src="hotel1.jpg" style="width:100%">-->
+<!--        </div>-->
+<!--    </div>-->
+    <style>
+    div.gallery {
+    margin: 5px;
+    float: left;
+    width: 300px;
+    height: auto;
+    }
+    div.gallery img {
+    height: 30%;
+    width: auto;
+    margin 15px;
+    }
+    </style>
+    <div class="gallery">
+        <a target="_blank" href="hotel1.jpg">
+            <img src="hotel1.jpg">
+        </a>
+    </div>
+    <div class="gallery">
+        <a target="_blank" href="trees.jpg">
+            <img src="trees.jpg" alt="blu" width="600"> height="400"
+        </a>
+    </div>
+    <div class="gallery">
+        <a target="_blank" href="burst1.jpg">
+            <img src="burst1.jpg" alt="blu" width="600" height="400">
+        </a>
+    </div>
+
+</div>
+</body>
+</html>
