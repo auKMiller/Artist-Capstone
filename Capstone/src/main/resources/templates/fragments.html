@@ -7,6 +7,12 @@
     <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
 
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
     <div th:fragment="nav-bar" class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
@@ -52,38 +58,19 @@
     }
 
 </style>
-
-
-
                 <ul class="nav navbar-nav">
                     <li><a href="gallery">Gallery</a></li>
                     <li><a href="index">About</a></li>
-                    <li><a href="cart">Shopping Cart</a></li>
+                    <li><a href="cart" class="btn btn-default btn-lg">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>Shopping Cart
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 
 </head>
-<body th:fragment="body">
-    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
-    <link th:href="@{/css/capstone.css}" rel="stylesheet" />
-    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
-
-    <div th:fragment="shop-cart"class="container">
-        <style>
-            cart {
-            float: right;
-            margin-top: 15px;
-            margin-right: 15px;
-            position: fixed;
-            }
-        </style>
-        <a href="cart">
-            <span class="glyphicon glyphicon-shopping-cart"></span>
-        </a>
-    </div>
-</body>
 
 
 </html>
