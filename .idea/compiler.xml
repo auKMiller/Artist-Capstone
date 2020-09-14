@@ -4,6 +4,9 @@
     <bytecodeTargetLevel>
       <module name="Capstone.Capstone.main~1" target="14" />
       <module name="Capstone.Capstone.test~1" target="14" />
+      <module name="com.example.Capstone" target="14" />
+      <module name="com.example.Capstone.main" target="14" />
+      <module name="com.example.Capstone.test" target="14" />
     </bytecodeTargetLevel>
   </component>
 </project>
