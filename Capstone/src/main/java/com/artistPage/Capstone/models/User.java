@@ -1,7 +1,9 @@
 package com.artistPage.Capstone.models;
 
+import javax.persistence.Entity;
 
-public class User {
+@Entity
+public class User extends AbstractEntity {
 
     private String username;
 
