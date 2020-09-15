@@ -1,14 +1,15 @@
 package com.artistPage.Capstone.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping()
+@RequestMapping("view")
 public class ImageController {
 
-
-    public String displayImage() {
+    @RequestMapping("")
+    public String displayImage(Model model) {
         return "view";
     }
 
