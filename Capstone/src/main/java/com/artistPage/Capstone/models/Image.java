@@ -1,6 +1,9 @@
 package com.artistPage.Capstone.models;
 
-public class Image{
+import javax.persistence.Entity;
+
+@Entity
+public class Image extends AbstractEntity {
 
     private int id;
     private static int nextId = 1;
