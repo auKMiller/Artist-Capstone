@@ -5,9 +5,16 @@
 
 </head>
 <body>
-<div style="margin-left:20%;padding:1px 16px;height:1000px;">
+<div style="margin-left:20%;padding:1px 16px;height:1000px;"></div>
 
-
+<div class="container body-content">
+    <h2>Shopping Cart</h2>
+    <ul>
+        <li th:each="image : ${images}">
+            <a th:href="@{'/cart/' + ${image.id}}" th:text="${image.name}"></a>
+        </li>
+    </ul>
+</div>
 
 </body>
 </html>
