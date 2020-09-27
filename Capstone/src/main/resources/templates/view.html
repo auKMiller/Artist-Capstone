@@ -23,7 +23,9 @@ button {
     }
 </style>
 
-<img src="trees.jpg">
+<p>
+    <a th:href="@{'/view/' + ${image}}"></a>
+</p>
 <button type="submit" onclick="document.location='cart'">Add to Cart</button>
 
 </body>
