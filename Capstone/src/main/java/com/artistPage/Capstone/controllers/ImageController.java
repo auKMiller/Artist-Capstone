@@ -14,9 +14,12 @@ import java.util.List;
 @RequestMapping("view")
 public class ImageController {
 
-    public static List<Image> images = new ArrayList<>();
+    public static List<Image> images = new ArrayList<Image>();
 
-    // save, findById
+    public List<Image> getImages(){
+        return images;
+    }
+
 
     @Autowired
     private ImageRepository imageRepository;
@@ -26,4 +29,8 @@ public class ImageController {
         return "view";
     }
 
+
+    public static void setImages(List<Image> images) {
+        ImageController.images = images;
+    }
 }

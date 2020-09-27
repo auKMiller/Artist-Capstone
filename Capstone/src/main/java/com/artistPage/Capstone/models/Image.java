@@ -10,5 +10,4 @@ public class Image extends AbstractEntity {
     }
 
 
-
 }
