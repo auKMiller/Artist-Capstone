@@ -80,21 +80,24 @@
     }
     </style>
 
-    <div class="gallery">
-        <a target="_self" href="hotel1.jpg">
-            <img src="hotel1.jpg" usemap="#hotel">
-        </a>
-    </div>
-    <div class="gallery">
-        <a target="_self" href="view">
-            <img src="trees.jpg" alt="blu">
-        </a>
-    </div>
 <!--    <div class="gallery">-->
-<!--        <a target="_self" href="burst1.jpg">-->
-<!--            <img src="burst1.jpg" alt="blu">-->
+<!--        <a target="_self" href="hotel1.jpg">-->
+<!--            <img src="hotel1.jpg" usemap="#hotel">-->
 <!--        </a>-->
 <!--    </div>-->
+<!--    <div class="gallery">-->
+<!--        <a target="_self" href="view">-->
+<!--            <img src="trees.jpg" alt="blu">-->
+<!--        </a>-->
+<!--    </div>-->
+    <div class="container body-content">
+        <table class="gallery-images">
+            <tr th:each="image : ${images}">
+                <a th:each="image : ${images}"></a>
+            </tr>
+        </table>
+        <a th:each="image : ${images}"></a>
+    </div>
 
 </div>
 </body>

@@ -26,10 +26,10 @@
 <div style="margin-left:20%;padding:1px 16px;height:1000px;">
 
     <h2>Add New Artwork</h2>
-    <form action="action_page.java">
+    <form method="post">
         <label for="img">Select image:</label>
         <input type="file" id="img" name="img" accept="image/*">
-        <input type="submit">
+        <button type="submit" onclick="document.location='gallery'">Submit</button>
     </form>
 </div>
 
