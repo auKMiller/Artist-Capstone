@@ -16,6 +16,8 @@ public class ImageController {
 
     public static List<Image> images = new ArrayList<>();
 
+    // save, findById
+
     @Autowired
     private ImageRepository imageRepository;
 

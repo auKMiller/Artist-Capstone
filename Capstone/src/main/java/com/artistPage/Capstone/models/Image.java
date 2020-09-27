@@ -7,7 +7,6 @@ public class Image extends AbstractEntity {
 
 
     public Image(){
-        
     }
 
 
