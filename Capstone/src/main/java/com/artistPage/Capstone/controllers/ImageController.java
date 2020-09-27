@@ -5,10 +5,12 @@ import com.artistPage.Capstone.models.data.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("view")
@@ -24,8 +26,14 @@ public class ImageController {
     @Autowired
     private ImageRepository imageRepository;
 
-    @RequestMapping("")
-    public String displayImage(Model model) {
+    @RequestMapping("view/{imageId}")
+    public String displayImageById(Model model, @PathVariable int imageId) {
+
+        Optional optImage = imageRepository.findById(imageId);
+        if(optImage.isPresent()){
+            Image image = (Image) optImage.get();
+            model.addAttribute("image", image);
+        }
         return "view";
     }
 

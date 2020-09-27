@@ -48,6 +48,7 @@ public abstract class AbstractEntity {
         return Objects.hash(id);
     }
 
-
-
+    public void setId(int id) {
+        this.id = id;
+    }
 }
