@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Add Image</title>
+    <style>
+    h2 {
+    color: chocolate;
+    text-align: justify;
+    font-size: 50px;
+    padding: 40px;
+    margin-top: 0;
+    margin-left: 300px;
+    }
+    p {
+    text-indent: 50px;
+    txt-align: justify;
+    font-family: verdana;
+    font size: 50px;
+
+    margin-top: 0px;
+    margin-bottom: 100px;
+    margin-left: 200px;
+    margin-right: 300px;
+    }
+    </style>
+    <div th:replace="fragments :: nav-bar"></div>
 </head>
 <body>
-<div style="margin-left:20%;padding:1px 16px;height:1000px;"></div>
+<div style="margin-left:20%;padding:1px 16px;height:1000px;">
 
-
-
+    <h2>Add New Artwork</h2>
+    <form action="action_page.java">
+        <input type="file" id="myFile" name="filename">
+        <input type="submit">
+    </form>
+</div>
 
 </body>
 </html>
