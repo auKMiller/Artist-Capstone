@@ -4,15 +4,21 @@ import com.artistPage.Capstone.models.Image;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("view")
 public class ImageController {
 
     public static List<Image> images = new ArrayList<Image>();
 
+    @RequestMapping("")
+    public String displayImage(Model model){
+        return "view";
+    }
 
     @GetMapping("add")
     public String displayAddImageForm(Model model){
@@ -21,13 +27,7 @@ public class ImageController {
         return "add";
     }
 
-    //This was added from the link Shaw showed me.
-//    @RequestMapping(value = "/gallery", method = RequestMethod.POST)
-//    public String submit(@RequestParam("file") MultipartFile file, ModelMap modelMap) {
-//    modelMap.addAttribute("file", file);
-//    return "gallery";
-//    }
-//
+
 //    @Autowired
 //    private ImageRepository imageRepository;
 //
