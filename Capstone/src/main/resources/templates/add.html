@@ -26,12 +26,48 @@
 <div style="margin-left:20%;padding:1px 16px;height:1000px;">
 
     <h2>Add New Artwork</h2>
-    <form method="post">
-        <label for="img">Select image:</label>
-        <input type="file" id="img" name="img" accept="image/*">
-        <button type="submit" onclick="document.location='gallery'">Submit</button>
-    </form>
+<!--    <form method="post">-->
+<!--        <label for="img">Select image:</label>-->
+<!--        <input type="file" id="img" name="img" accept="image/*">-->
+<!--        <button type="submit" onclick="document.location='gallery'">Submit</button>-->
+<!--    </form>-->
+
+<!--    This was from the link Shaw showed me.-->
+    <form method="POST" action="/spring-mvc-xml/uploadFile" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td><label path="file">Select a file to upload</label></td>
+                <td><input type="file" name="file" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+        </form>
 </div>
 
 </body>
 </html>
+<!--To upload our file, we can build a simple form in which we use an HTML input tag with type='file'.-->
+
+<!--Regardless of the upload handling configuration, we have chosen, we need to set the encoding attribute of the form to multipart/form-data. This lets the browser know how to encode the form:-->
+
+<!--<form:form method="POST" action="/spring-mvc-xml/uploadFile" enctype="multipart/form-data">-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <td><form:label path="file">Select a file to upload</form:label></td>-->
+<!--            <td><input type="file" name="file" /></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><input type="submit" value="Submit" /></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--    </form>-->
+<!--    To store the uploaded file we can use a MultipartFile variable.
+We can retrieve this variable from the request parameter inside our controller's method:-->
+
+<!--    @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)-->
+<!--    public String submit(@RequestParam("file") MultipartFile file, ModelMap modelMap) {-->
+<!--    modelMap.addAttribute("file", file);-->
+<!--    return "fileUploadView";-->
+<!--    }-->

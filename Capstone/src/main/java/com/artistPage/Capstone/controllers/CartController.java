@@ -25,6 +25,7 @@ public class CartController {
     public CartController() {
 
         columnImages.put("image", "Image");
+
     }
 
 }

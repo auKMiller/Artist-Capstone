@@ -21,7 +21,12 @@ public class ImageController {
         return "add";
     }
 
-
+    //This was added from the link Shaw showed me.
+//    @RequestMapping(value = "/gallery", method = RequestMethod.POST)
+//    public String submit(@RequestParam("file") MultipartFile file, ModelMap modelMap) {
+//    modelMap.addAttribute("file", file);
+//    return "gallery";
+//    }
 //
 //    @Autowired
 //    private ImageRepository imageRepository;
