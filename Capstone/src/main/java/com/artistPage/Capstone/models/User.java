@@ -1,12 +1,16 @@
 package com.artistPage.Capstone.models;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.Entity;
 
 @Entity
 public class User extends AbstractEntity {
 
+    @NotNull
     private String username;
 
+    @NotNull
     private String pwHash;
 
     public User(){}
@@ -21,7 +25,7 @@ public class User extends AbstractEntity {
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public boolean isMatchingPassword(String password){
-//        return encoder.matches(password, pwHash);
+        //return encoder.matches(password, pwHash);
         return true;
     }
 }
