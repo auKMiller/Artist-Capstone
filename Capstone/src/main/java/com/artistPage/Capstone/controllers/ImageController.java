@@ -10,12 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("view")
 public class ImageController {
 
     public static List<Image> images = new ArrayList<Image>();
 
-    @RequestMapping("")
+    @RequestMapping("view")
     public String displayImage(Model model){
         return "view";
     }
