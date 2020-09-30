@@ -1,4 +1,9 @@
 package com.artistPage.Capstone.models.data;
 
-public interface UserRepository {
+import com.artistPage.Capstone.models.User;
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserRepository extends CrudRepository<User, Integer> {
+
+    User findByUsername(String username);
 }
