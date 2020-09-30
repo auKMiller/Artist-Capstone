@@ -1,12 +1,13 @@
 package com.artistPage.Capstone.models;
 
-import com.sun.istack.NotNull;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class User extends AbstractEntity {
+
 
     @NotNull
     private String username;
@@ -14,7 +15,7 @@ public class User extends AbstractEntity {
     @NotNull
     private String pwHash;
 
-    public User(){}
+    //public User(){}
 
     public User(String username, String password){
         this.username = username;
