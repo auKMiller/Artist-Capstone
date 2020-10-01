@@ -22,6 +22,7 @@ public class User extends AbstractEntity {
     public User(String username, String password){
         this.username = username;
         this.pwHash = encoder.encode(password);
+        super.setName(username);
     }
     public String getUsername(){
         return username;
