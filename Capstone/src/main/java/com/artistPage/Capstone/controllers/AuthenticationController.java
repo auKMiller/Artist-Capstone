@@ -2,6 +2,7 @@ package com.artistPage.Capstone.controllers;
 
 import com.artistPage.Capstone.models.User;
 import com.artistPage.Capstone.models.data.UserRepository;
+import com.artistPage.Capstone.models.dto.LoginFormDTO;
 import com.artistPage.Capstone.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -74,4 +75,37 @@ public class AuthenticationController {
         return "redirect:";
     }
 
+    @GetMapping("/login")
+    public String displayLoginForm(Model model){
+        model.addAttribute(new LoginFormDTO());
+        model.addAttribute("title", "Log In");
+        return "login";
+    }
+    @PostMapping
+    public String processLoginForm(@ModelAttribute @Valid LoginFormDTO loginFormDTO,
+                                   Errors errors, HttpServletRequest request, Model model){
+        if(errors.hasErrors()){
+            model.addAttribute("title", "Log In");
+            return "login";
+        }
+        User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
+            if(theUser == null){
+                errors.rejectValue("username", "user.invalid", "The given username does not exist");
+                model.addAttribute("title", "Log In");
+                return "login";
+            }
+            String password = loginFormDTO.getPassword();
+                if(!theUser.isMatchingPassword(password)){
+                    errors.rejectValue("password", "password.invalid", "Invalid password");
+                    model.addAttribute("title", "Log In");
+                    return "login";
+                }
+            setUserInSession(request.getSession(), theUser);
+            return "redirect:";
+    }
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return "redirect:/login";
+    }
 }

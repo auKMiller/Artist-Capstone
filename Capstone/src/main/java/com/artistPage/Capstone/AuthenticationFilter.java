@@ -27,7 +27,7 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
         if(user != null){
             return true;
         }
-        response.sendRedirect("/login");
+        //response.sendRedirect("/register");
         return false;
 
     }
