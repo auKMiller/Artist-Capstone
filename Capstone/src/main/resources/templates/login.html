@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
+
+    <div th:replace="fragments :: nav-bar"></div>
+<!--<link th:href="@{/css/bootstrap.css}" rel="stylesheet" />-->
+<!--<link th:href="@{/css/capstone.css}" rel="stylesheet" />-->
+<!--<script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>>-->
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -8,6 +13,7 @@
     <title></title>
 </head>
 <body class="container">
+<div style="margin-left:20%;padding:1px 16px;height:1000px;">
 <form method="post">
     <div class="form-group">
         <label th:for="username">Username
