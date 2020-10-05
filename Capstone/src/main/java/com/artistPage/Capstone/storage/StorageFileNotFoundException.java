@@ -1,6 +1,6 @@
 package com.artistPage.Capstone.storage;
 
-public class StorageFileNotFoundException extends com.artistPage.Capstone.storage.StorageException {
+public class StorageFileNotFoundException extends StorageException {
 
 	public StorageFileNotFoundException(String message) {
 		super(message);

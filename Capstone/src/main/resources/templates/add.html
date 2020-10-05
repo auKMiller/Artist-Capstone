@@ -42,6 +42,9 @@
             <tr>
                 <td><input type="submit" value="Submit" /></td>
             </tr>
+            <div th:if="${message1}">
+                <h2 th:text="${messageTwo}"/>
+            </div>
         </table>
         </form>
 </div>

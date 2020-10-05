@@ -18,12 +18,12 @@ import java.nio.file.StandardCopyOption;
 import java.util.stream.Stream;
 
 @Service
-public class FileSystemStorageService implements com.artistPage.Capstone.storage.StorageService {
+public class FileSystemStorageService implements StorageService {
 
 	private final Path rootLocation;
 
 	@Autowired
-	public FileSystemStorageService(com.artistPage.Capstone.storage.StorageProperties properties) {
+	public FileSystemStorageService(StorageProperties properties) {
 		this.rootLocation = Paths.get(properties.getLocation());
 	}
 
@@ -32,21 +32,21 @@ public class FileSystemStorageService implements com.artistPage.Capstone.storage
 		String filename = StringUtils.cleanPath(file.getOriginalFilename());
 		try {
 			if (file.isEmpty()) {
-				throw new com.artistPage.Capstone.storage.StorageException("Failed to store empty file " + filename);
+				throw new StorageException("Failed to store empty file " + filename);
 			}
 			if (filename.contains("..")) {
 				// This is a security check
-				throw new com.artistPage.Capstone.storage.StorageException(
+				throw new StorageException(
 						"Cannot store file with relative path outside current directory "
 								+ filename);
 			}
 			try (InputStream inputStream = file.getInputStream()) {
 				Files.copy(inputStream, this.rootLocation.resolve(filename),
-					StandardCopyOption.REPLACE_EXISTING);
+						StandardCopyOption.REPLACE_EXISTING);
 			}
 		}
 		catch (IOException e) {
-			throw new com.artistPage.Capstone.storage.StorageException("Failed to store file " + filename, e);
+			throw new StorageException("Failed to store file " + filename, e);
 		}
 	}
 
@@ -54,11 +54,11 @@ public class FileSystemStorageService implements com.artistPage.Capstone.storage
 	public Stream<Path> loadAll() {
 		try {
 			return Files.walk(this.rootLocation, 1)
-				.filter(path -> !path.equals(this.rootLocation))
-				.map(this.rootLocation::relativize);
+					.filter(path -> !path.equals(this.rootLocation))
+					.map(this.rootLocation::relativize);
 		}
 		catch (IOException e) {
-			throw new com.artistPage.Capstone.storage.StorageException("Failed to read stored files", e);
+			throw new StorageException("Failed to read stored files", e);
 		}
 
 	}
@@ -77,13 +77,13 @@ public class FileSystemStorageService implements com.artistPage.Capstone.storage
 				return resource;
 			}
 			else {
-				throw new com.artistPage.Capstone.storage.StorageFileNotFoundException(
+				throw new StorageFileNotFoundException(
 						"Could not read file: " + filename);
 
 			}
 		}
 		catch (MalformedURLException e) {
-			throw new com.artistPage.Capstone.storage.StorageFileNotFoundException("Could not read file: " + filename, e);
+			throw new StorageFileNotFoundException("Could not read file: " + filename, e);
 		}
 	}
 
@@ -98,7 +98,8 @@ public class FileSystemStorageService implements com.artistPage.Capstone.storage
 			Files.createDirectories(rootLocation);
 		}
 		catch (IOException e) {
-			throw new com.artistPage.Capstone.storage.StorageException("Could not initialize storage", e);
+			throw new StorageException("Could not initialize storage", e);
 		}
 	}
 }
+
