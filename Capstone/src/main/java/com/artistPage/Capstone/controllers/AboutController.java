@@ -5,12 +5,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("index")
 public class AboutController {
 
-    @RequestMapping("")
+    @RequestMapping("index")
     public String index(Model model){
         return "index";
     }
 
+    @RequestMapping("form")
+    public String form(Model model){
+        return "form";
+    }
 }
