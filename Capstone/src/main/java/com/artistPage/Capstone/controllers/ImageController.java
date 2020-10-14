@@ -1,19 +1,22 @@
 package com.artistPage.Capstone.controllers;
 
-import com.artistPage.Capstone.models.Image;
+import com.artistPage.Capstone.Storage.StorageService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class ImageController {
-
-    public static List<Image> images = new ArrayList<Image>();
+    private StorageService storageService;
+    public static List<MultipartFile> images = new ArrayList<MultipartFile>();
 
     @RequestMapping("view")
     public String displayImage(Model model){
@@ -22,13 +25,22 @@ public class ImageController {
 
     @GetMapping("add")
     public String displayAddImageForm(Model model){
+//        model.addAttribute(new MultipartFile());
         model.addAttribute("title", "Add Image");
 
         return "add";
     }
 
     @PostMapping("add")
-    public String addImageToGallery(Model model){
+    public String addImageToGallery(@RequestParam MultipartFile file, Model model, Errors errors){
+        if(errors.hasErrors()){
+            model.addAttribute("title", "Add Image");
+            return "add";
+        }
+//        if(!file.isEmpty()){
+//            StorageService.store(file);
+//            images.add(file);
+//        }
         return "add";
     }
 
